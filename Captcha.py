@@ -1,16 +1,18 @@
 import random
+import string
+
+
 
 print('Realize o Captcha abaixo para prosseguir')
 
-n = random.randint(0,26)
-a = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+n = random.randint(0, 26)
+a = list(string.ascii_letters)
 c = ""
 r = 0
-
 while r != 1:
     for i in range(2):
         for y in range(4):
-            n = random.randint(0,26)
+            n = random.randint(0,len(a))
             c += a[n]
         c += ' '
     c = c[:-1]
@@ -24,5 +26,4 @@ while r != 1:
         r = 0
         print('Captcha INCORRETO!')
         c = ''
-
 print('BEM-VINDO ao Sistema!')
