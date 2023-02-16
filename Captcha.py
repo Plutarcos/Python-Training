@@ -13,7 +13,8 @@ while r != 1:
     for i in range(2):
         for y in range(4):
             n = random.randint(0,len(a))
-            c += a[n]
+            c += a[n-1]
+            
         c += ' '
     c = c[:-1]
     print(c)
