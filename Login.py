@@ -25,6 +25,7 @@ while haslogged !=1:
             if loggedin ==0:
                 print('\nUsuário NÃO EXISTE\nPor favor, tente novamente\n')
         print('\n\nLOGIN REALIZADO COM SUCESSO!\n')
+        global haslogged 
         haslogged += 1
         
 
