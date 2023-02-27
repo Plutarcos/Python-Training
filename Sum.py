@@ -1,3 +1,5 @@
+# This system was just for a quick math question i had
+
 sum = 0
 userinput = ''
 while 1 != 2:
