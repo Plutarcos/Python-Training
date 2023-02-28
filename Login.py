@@ -3,6 +3,20 @@ passwords = ["admin"]
 userLoggedName = 'user'
 haslogged = 0
 
+def save_to_txt(usernamedata, passworddata):
+    with open('data\logindata.txt', 'w') as file:
+        file.write(','.join(usernamedata) + '\n')
+        file.write(','.join(passworddata))
+
+def read_from_txt():
+    with open('data\logindata.txt', 'r') as file:
+        lines = file.readlines()
+    usernamedata = lines[0].rstrip('\n')
+    passworddata = lines[1]
+    list1 = usernamedata.split(',')
+    list2 = passworddata.split(',')
+    return list1, list2
+
 def runLogin():
     while haslogged !=1:
         print("1-Fazer Login")
@@ -11,6 +25,7 @@ def runLogin():
 
 
         def login():
+            usernames, passwords = read_from_txt()
             loggedin = 0
             while loggedin != 2:
                 loggedin = 0
@@ -40,6 +55,8 @@ def runLogin():
             print('\n\nCadastro realizado com sucesso\n\n')
             usernames.append(inputUser)
             passwords.append(inputPass)
+
+            save_to_txt(usernames,passwords)
 
         if choice == 1:
             login()
