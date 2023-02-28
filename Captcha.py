@@ -3,7 +3,7 @@ import string
 
 
 def runCaptcha():
-    print('Realize o Captcha abaixo para prosseguir')
+    print('Realize o Captcha abaixo para prosseguir\n')
 
     n = random.randint(0, 26)
     a = list(string.ascii_letters)
@@ -18,12 +18,12 @@ def runCaptcha():
             c += ' '
         c = c[:-1]
         print(c)
-        userInput = input('Digite o captcha EXATAMENTE como acima:\n')
+        userInput = input('\nDigite o captcha EXATAMENTE como acima:\n')
 
         if userInput == c:
             r = 1
-            print('Captcha CORRETO!')
+            print('\nCaptcha CORRETO!\n')
         else:
             r = 0
-            print('Captcha INCORRETO!')
+            print('\nCaptcha INCORRETO!\n')
             c = ''
